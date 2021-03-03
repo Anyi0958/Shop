@@ -687,6 +687,30 @@
 
 </script>
 
+<!--四楼事件-->
+<script>
+    $(function($) {
+        // 轮播图
+        var imgIndex = 0;
+        var time = null;
+
+        setInterval(function(){
+            time = null;
+            imgIndex++
+            $($('.banner ul')[0]).css('transition','all 0.5s')
+            $($('.banner ul')[0]).css('left','-' + (1146*imgIndex) +'px')
+
+            if(imgIndex==2){
+                time = setTimeout(()=>{
+                    $($('.banner ul')[0]).css('transition','all 0s')
+                    $($('.banner ul')[0]).css('left','0')
+                    imgIndex = 0;
+                },500)
+            }
+        },1000*2)
+    });
+</script>
+
 <!--三楼事件-->
 <script>
 //更多
